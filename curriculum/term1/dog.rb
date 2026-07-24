@@ -1,4 +1,7 @@
 class Dog
+
+  attr_accessor :name
+
   def initialize(name)
     @name = name
   end
@@ -8,34 +11,18 @@ class Dog
     puts 'ワンワン'
   end
 
-  # attr_reader :name
-  # def name
-  #   @name
-  # end
-
-  # attr_writer
-  # def name=(new_name)
-  #   @name = new_name
-  # end
-
-  # def test(new_name)
-  #   @name = new_name
-  # end
-  attr_accessor :name
-
   def introduce
     puts "ぼくの名前は#{@name}だよ"
   end
 end
 
 #　インスタンスを作成する
-dog = Dog.new('ポチ')
-puts dog.name
-dog.bark
+dog_p = Dog.new('ポチ')
+dog_t = Dog.new('タロウ')
+dog_h = Dog.new('ハチ')
 
-dog.introduce
+dogs = [dog_p, dog_t, dog_h]
 
-dog.name = 'タロウ'
-puts dog.name
-
-dog.introduce
+dogs.each do |dog|
+  dog.introduce
+end
